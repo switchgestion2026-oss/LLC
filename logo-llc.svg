@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 150" role="img" aria-labelledby="title desc">
+  <title id="title">Laennec Lineage Cardiolab</title>
+  <desc id="desc">Identidad visual de Laennec Lineage Cardiolab, cardiología clínica y diagnóstico cardiovascular.</desc>
+  <g fill="none" stroke="#92785f" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="75" cy="75" r="62" opacity=".62"/>
+    <circle cx="75" cy="75" r="54" opacity=".24"/>
+    <path d="M75 32v24c0 11-8 19-19 19H42m33-19c0 11 8 19 19 19h5"/>
+    <path d="M42 75h13l7-12 11 26 10-18 7 4h15" stroke="#b28e63" stroke-width="3.2"/>
+    <path d="M100 94c0 11-11 20-25 20S50 105 50 94" opacity=".7"/>
+  </g>
+  <g fill="#263b42">
+    <text x="164" y="69" font-family="Georgia,serif" font-size="35" letter-spacing="3.2">LAENNEC LINEAGE</text>
+    <text x="166" y="104" font-family="Arial,sans-serif" font-size="16" letter-spacing="8.4" fill="#92785f">CARDIOLAB</text>
+  </g>
+  <path d="M166 119h420" stroke="#92785f" stroke-width="1" opacity=".55"/>
+</svg>
