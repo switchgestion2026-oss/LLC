@@ -125,25 +125,24 @@ section{padding:var(--sec) 0}
 .story{display:block}
 .heart-col{display:contents}
 .heart-sticky{position:sticky;top:calc(var(--header-h) + 4px);z-index:5;margin:0 0 18px;padding:8px 0 10px;background:rgba(243,239,231,.98);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);text-align:center;border-bottom:1px solid var(--line)}
-.heart{display:block;height:140px;width:auto;margin:0 auto;overflow:visible}
-.hg path,.hd path{fill:none;stroke:var(--bronze);stroke-linecap:round;stroke-linejoin:round}
-.hg path{stroke-width:1.5;opacity:.2}.hd path{stroke-width:2.2}.hg path:last-child{opacity:.1}.hd path:last-child{stroke-width:1.3;opacity:.55}
-.dot{cursor:pointer;transition:opacity .4s,transform .4s;transform-box:fill-box;transform-origin:center}
-.dot .halo{fill:rgba(146,120,95,.16);opacity:0;transition:opacity .3s}
-.dot .pt{fill:var(--white);stroke:var(--bronze);stroke-width:1.5;transition:fill .3s}
-.dot text{font:700 10px var(--sans);fill:var(--bronze-d);pointer-events:none;transition:fill .3s}
-.story.js .dot{opacity:0;transform:scale(.4)}.story.js .dot.on{opacity:1;transform:none}
-.dot.active .halo{opacity:1}.dot.active .pt{fill:var(--bronze)}.dot.active text{fill:#fff}
+.heart-stage{position:relative;display:inline-block;height:190px;aspect-ratio:760/1033}
+.heart-stage img{position:absolute;inset:0;width:100%;height:100%}
+.hi-ghost{opacity:.13}
+.hi-draw{-webkit-mask-image:linear-gradient(to bottom,#000 calc(var(--p,1)*115% - 15%),transparent calc(var(--p,1)*115%));mask-image:linear-gradient(to bottom,#000 calc(var(--p,1)*115% - 15%),transparent calc(var(--p,1)*115%))}
+.dot{position:absolute;transform:translate(-50%,-50%);width:26px;height:26px;border-radius:50%;background:var(--white);border:1.5px solid var(--bronze);color:var(--bronze-d);font:700 11px/23px var(--sans);text-align:center;box-shadow:0 0 0 0 rgba(146,120,95,.3);transition:opacity .4s,transform .4s,background .3s,color .3s,box-shadow .3s}
+.story.js .dot{opacity:0;transform:translate(-50%,-50%) scale(.4)}.story.js .dot.on{opacity:1;transform:translate(-50%,-50%)}
+.dot.active{background:var(--bronze);color:#fff;box-shadow:0 0 0 7px rgba(146,120,95,.18)}
 .heart-cap{margin-top:6px;font:400 15px var(--serif);min-height:1.5em}
 .heart-cap small{color:var(--bronze-d);font:700 11px var(--sans);letter-spacing:.14em;margin-right:8px}
 .story-list{display:grid;gap:18px}
 .st-n{font:400 12px var(--serif);letter-spacing:.14em;color:var(--bronze-d)}
 .study.is-active{border-color:var(--bronze);box-shadow:0 16px 34px rgba(38,59,66,.1)}
 @media(min-width:1024px){
- .story{display:grid;grid-template-columns:minmax(300px,380px) 1fr;gap:64px;align-items:start}
+ .story{display:grid;grid-template-columns:minmax(300px,400px) 1fr;gap:64px;align-items:start}
  .heart-col{display:block;align-self:stretch}
- .heart-sticky{top:calc(var(--header-h) + 40px);background:none;border:0;padding:0;-webkit-backdrop-filter:none;backdrop-filter:none}
- .heart{width:100%;height:auto;max-width:380px}
+ .heart-sticky{top:calc(var(--header-h) + 32px);background:none;border:0;padding:0;-webkit-backdrop-filter:none;backdrop-filter:none}
+ .heart-stage{height:auto;width:100%;max-width:400px}.heart-stage img{position:static}.hi-draw{position:absolute!important;inset:0}
+ .dot{width:32px;height:32px;font-size:13px;line-height:29px}
  .story-list{gap:26px}.study{padding:34px 32px;min-height:170px}
 }
 /* divisor ECG */
@@ -232,7 +231,7 @@ section{padding:var(--sec) 0}
 <div class="divider-ecg" aria-hidden="true"><svg viewBox="0 0 1440 58" preserveAspectRatio="none"><path class="ecg-path" d="M0 30 H270 L292 30 L310 22 L326 38 L344 30 H525 L546 30 L560 9 L578 49 L595 30 H760 L780 30 L795 24 L810 35 L825 30 H1015 L1038 30 L1055 4 L1074 52 L1092 30 H1260 L1282 30 L1300 22 L1316 38 L1334 30 H1440"/><circle class="ecg-traveler" cx="0" cy="30" r="4"/></svg></div>
 <section class="studies" id="estudios"><div class="wrap">
 <div class="sec-head"><div class="eyebrow">Estudios</div><h2>Estudios para evaluar la salud de tu corazón.</h2><p>Herramientas para la prevención, el diagnóstico y el seguimiento cardiovascular. La indicación de cada estudio depende de la evaluación médica.</p></div>
-<div class="story"><div class="heart-col"><div class="heart-sticky"><svg class="heart" viewBox="0 0 240 262" role="img" aria-label="Corazón con seis estudios marcados"><g class="hg"><path d="M66 104 C50 128 46 160 62 192 C78 222 108 242 130 250 C164 238 198 208 202 164 C205 134 196 112 178 100 C164 90 146 86 128 88 C104 90 80 94 66 104 Z"/><path d="M66 104 C62 80 66 54 64 30"/><path d="M86 99 C84 78 88 58 86 34"/><path d="M106 96 C100 60 108 26 144 18 C178 12 196 42 192 90"/><path d="M128 94 C126 66 134 46 150 42 C166 38 174 54 172 92"/><path d="M158 94 C168 84 184 86 188 100 C176 98 166 100 160 104"/><path d="M74 106 C66 128 78 150 100 152 C118 154 128 134 136 100"/><path d="M138 98 C148 140 146 200 132 246"/><path d="M146 130 C166 126 182 134 190 150"/><path d="M142 170 C160 168 176 176 184 192"/><path d="M82 152 C76 168 78 186 86 200"/><path d="M6 140 H92 L102 140 L112 120 L124 164 L134 140 H234"/></g><g class="hd"><path class="hp" d="M66 104 C50 128 46 160 62 192 C78 222 108 242 130 250 C164 238 198 208 202 164 C205 134 196 112 178 100 C164 90 146 86 128 88 C104 90 80 94 66 104 Z"/><path class="hp" d="M66 104 C62 80 66 54 64 30"/><path class="hp" d="M86 99 C84 78 88 58 86 34"/><path class="hp" d="M106 96 C100 60 108 26 144 18 C178 12 196 42 192 90"/><path class="hp" d="M128 94 C126 66 134 46 150 42 C166 38 174 54 172 92"/><path class="hp" d="M158 94 C168 84 184 86 188 100 C176 98 166 100 160 104"/><path class="hp" d="M74 106 C66 128 78 150 100 152 C118 154 128 134 136 100"/><path class="hp" d="M138 98 C148 140 146 200 132 246"/><path class="hp" d="M146 130 C166 126 182 134 190 150"/><path class="hp" d="M142 170 C160 168 176 176 184 192"/><path class="hp" d="M82 152 C76 168 78 186 86 200"/><path class="hp" d="M6 140 H92 L102 140 L112 120 L124 164 L134 140 H234"/></g><a class="dot" href="#st1" aria-label="Registro y monitoreo"><circle class="halo" cx="88" cy="128" r="16"/><circle class="pt" cx="88" cy="128" r="10"/><text x="88" y="131.5" text-anchor="middle">1</text></a><a class="dot" href="#st2" aria-label="Ergometría"><circle class="halo" cx="172" cy="172" r="16"/><circle class="pt" cx="172" cy="172" r="10"/><text x="172" y="175.5" text-anchor="middle">2</text></a><a class="dot" href="#st3" aria-label="Ecocardiograma Doppler"><circle class="halo" cx="146" cy="122" r="16"/><circle class="pt" cx="146" cy="122" r="10"/><text x="146" y="125.5" text-anchor="middle">3</text></a><a class="dot" href="#st4" aria-label="Ecodoppler vascular periférico"><circle class="halo" cx="150" cy="30" r="16"/><circle class="pt" cx="150" cy="30" r="10"/><text x="150" y="33.5" text-anchor="middle">4</text></a><a class="dot" href="#st5" aria-label="Aptitud física deportiva"><circle class="halo" cx="90" cy="192" r="16"/><circle class="pt" cx="90" cy="192" r="10"/><text x="90" y="195.5" text-anchor="middle">5</text></a><a class="dot" href="#st6" aria-label="Evaluación prequirúrgica"><circle class="halo" cx="112" cy="222" r="16"/><circle class="pt" cx="112" cy="222" r="10"/><text x="112" y="225.5" text-anchor="middle">6</text></a></svg><p class="heart-cap" id="heartCap">Recorré los estudios</p></div></div>
+<div class="story"><div class="heart-col"><div class="heart-sticky"><div class="heart-stage" id="heartStage" role="img" aria-label="Corazón con seis estudios marcados"><img class="hi-ghost" src="corazon.webp" alt="" width="760" height="1033"><img class="hi-draw" src="corazon.webp" alt="" aria-hidden="true" width="760" height="1033"><a class="dot" href="#st1" style="left:24%;top:38%" aria-label="Registro y monitoreo">1</a><a class="dot" href="#st2" style="left:65%;top:69%" aria-label="Ergometría">2</a><a class="dot" href="#st3" style="left:47%;top:36%" aria-label="Ecocardiograma Doppler">3</a><a class="dot" href="#st4" style="left:50%;top:9%" aria-label="Ecodoppler vascular periférico">4</a><a class="dot" href="#st5" style="left:28%;top:66%" aria-label="Aptitud física deportiva">5</a><a class="dot" href="#st6" style="left:44%;top:85%" aria-label="Evaluación prequirúrgica">6</a></div><p class="heart-cap" id="heartCap">Recorré los estudios</p></div></div>
 <div class="story-list">
 <article class="card study" id="st1" data-t="Registro y monitoreo"><span class="st-n">01</span><svg class="ico ico-lg" aria-hidden="true"><use href="#i-pulse"/></svg><h3>Registro y monitoreo</h3><p>Electrocardiograma, Holter cardíaco y presurometría de 24 horas.</p><a class="link" href="https://wa.me/5491155550000?text=Hola%2C%20quisiera%20consultar%20por%20electrocardiograma%2C%20Holter%20o%20presurometr%C3%ADa." target="_blank" rel="noopener">Consultar por estos estudios <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></article>
 <article class="card study" id="st2" data-t="Ergometría"><span class="st-n">02</span><svg class="ico ico-lg" aria-hidden="true"><use href="#i-bolt"/></svg><h3>Ergometría</h3><p>Evalúa la respuesta cardiovascular durante el ejercicio.</p><a class="link" href="https://wa.me/5491155550000?text=Hola%2C%20quisiera%20consultar%20por%20una%20ergometr%C3%ADa." target="_blank" rel="noopener">Consultar por este estudio <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></article>
@@ -346,13 +345,11 @@ o.p.style.strokeDashoffset=o.l*(1-k);o.t.setAttribute('cx',pt.x);o.t.setAttribut
 if(dv.length){window.addEventListener('scroll',function(){requestAnimationFrame(ecg)},{passive:true});window.addEventListener('resize',ecg);ecg()}
 var st=document.querySelector('.story');
 if(st){st.classList.add('js');
-var hp=[].slice.call(st.querySelectorAll('.hp')).map(function(p){return{p:p,l:p.getTotalLength()}}),
-tot=hp.reduce(function(a,o){return a+o.l},0),cards=[].slice.call(st.querySelectorAll('.study')),dots=[].slice.call(st.querySelectorAll('.dot')),cap=document.getElementById('heartCap');
+var stage=document.getElementById('heartStage'),cards=[].slice.call(st.querySelectorAll('.study')),dots=[].slice.call(st.querySelectorAll('.dot')),cap=document.getElementById('heartCap');
 function heart(){var vh=window.innerHeight,sum=0,act=-1,best=1e9;
 cards.forEach(function(c,i){var r=c.getBoundingClientRect(),k=Math.max(0,Math.min(1,(vh*.75-r.top)/(r.height*.9)));sum+=k;dots[i].classList.toggle('on',still||k>.2);
 var d=Math.abs(r.top+r.height/2-vh*.55);if(r.bottom>0&&r.top<vh&&d<best){best=d;act=i}});
-var draw=(still?1:sum/cards.length)*tot,cum=0;
-hp.forEach(function(o){var v=Math.max(0,Math.min(o.l,draw-cum));o.p.style.strokeDasharray=o.l;o.p.style.strokeDashoffset=o.l-v;cum+=o.l});
+stage.style.setProperty('--p',still?1:Math.min(1,sum/cards.length*1.05));
 cards.forEach(function(c,i){c.classList.toggle('is-active',!still&&i===act);dots[i].classList.toggle('active',!still&&i===act)});
 if(cap&&act>=0&&!still)cap.innerHTML='<small>'+(act+1)+' / '+cards.length+'</small>'+cards[act].getAttribute('data-t')}
 window.addEventListener('scroll',function(){requestAnimationFrame(heart)},{passive:true});window.addEventListener('resize',heart);heart()}
